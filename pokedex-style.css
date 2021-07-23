@@ -1,0 +1,515 @@
+
+ @font-face { font-family: VT323; src: url('fonts/VT323-Regular.ttf'); } 
+ @font-face { font-family: Staatliches; src: url('fonts/Staatliches-Regular.ttf'); } 
+
+* {
+    box-sizing: inherit;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: VT323, monospace;
+}
+
+.outer-container{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.outer-container h1 {
+    font-size: 4rem;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-family: Staatliches, sans-serif;
+    letter-spacing: 5px;
+    background: rgb(239, 239, 239);
+    opacity: 0.8;
+    transform: skew(
+    -5deg
+    );
+}
+
+.inner-container{
+    width: 870px;
+    background: rgb(206, 55, 43);
+    padding: 5px 16px 3px 0px;
+    border-radius: 50px;
+    opacity: 0.9;
+}
+
+.container{
+    position: relative;
+    top: 1%;
+    left: 1%;
+    height: 98%;
+    width: 98%;
+    border-radius: 50px;
+    border: 1px solid rgb(135, 36, 28);
+    padding: 0.5rem;
+    display: flex; 
+}
+
+.left-panel{
+    padding: 10px;
+    border: 2px solid rgb(179, 24, 24);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+}
+
+.center-panel{
+    display: flex;
+    width: 100px;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.right-panel{
+    padding: 10px;
+    border: 2px solid rgb(179, 24, 24);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.name-box{
+    background-color: rgb(165, 205, 83);
+    border-radius: 50px;
+    font-family: VT323;
+    padding: 15px;
+    font-size: 28px;
+    letter-spacing: 4px;
+    text-transform: capitalize;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.item-name-box{
+    justify-content: space-between;
+}
+
+.sprite-box{
+    width: 100%;
+    display: flex;
+    image-rendering: pixelated;
+    border-radius: 50%;
+    margin: 10px 0px;
+    background: rgb(202, 213, 181);
+}
+
+.controls-box{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.icon-border {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    color: black;
+    padding: 1px;
+    border: 2px solid rgb(176, 104, 104);
+    font-size: 15px;
+    outline: none;
+    background-color: inherit;
+    transition: all 0.1s ease 0s;
+}
+
+.icon-border:hover {
+    border-color: rgb(184, 237, 124);
+}
+
+.text-border {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: transparent;
+    border: 2px solid rgb(176, 104, 104);
+    border-radius: 18px;
+    color: #ffffff9c;
+}
+
+.text-border:hover {
+    border-color: rgb(184, 237, 124);
+    color: #fff;
+}
+
+.description-box{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.item-description-box{
+    background: rgb(165, 205, 83);
+    padding: 20px;
+    border-radius: 50px;
+    font-family: VT323;
+    font-size: 16px;
+    letter-spacing: 0px;
+    flex: 1 1 0%;
+    margin: 0px 5px;
+    min-height: 160px;
+}
+
+/* LEFT PANEL CSS START*/
+
+.stats-box{
+    display: flex;
+    border-bottom: 1px groove rgb(135, 36, 28);
+    padding-bottom: 5px;
+}
+
+.stats-box-left {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+}
+
+.stats-box-left-item1{
+    width: 77%;
+    image-rendering: pixelated;
+    margin: 10px 0px;
+    background: rgb(202, 213, 181);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    text-transform: capitalize;
+}
+
+/* ABILITY CLASS and POKEMON TYPE */
+
+.stats-box-left-item2{
+    color: rgba(0, 0, 0, 0.9);
+    text-transform: capitalize;
+    font-size: 1.1em;
+    width: 95%;
+    padding: 2px;
+    margin-bottom: 4px;
+    font-family: Staatliches, cursive;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: rgb(255 255 255 / 30%) -1px 1px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.physical {
+    background-color: rgb(152, 195, 222);
+    border: 3px groove rgb(152, 195, 222);
+    border-radius: 20px;
+}
+
+.ice {
+    background-color: rgb(152, 195, 222);
+    border: 3px groove rgb(152, 195, 222);
+    border-radius: 20px;
+}
+
+.water {
+    background-color: rgb(22, 137, 222);
+    border: 3px groove rgb(22, 137, 222);
+    border-radius: 20px;
+}
+.grass {
+    background-color: rgb(71, 160, 71);
+    border: 3px groove rgb(71, 160, 71);
+    border-radius: 20px;
+}
+
+.poison {
+    background-color: rgb(146, 81, 146);
+    border: 3px groove rgb(146, 81, 146);
+    border-radius: 20px;
+}
+
+.bug {
+    background-color: rgb(177, 201, 103);
+    border: 3px groove rgb(177, 201, 103);
+    border-radius: 20px;
+}
+
+.flying {
+    background-color: rgb(153, 154, 222);
+    border: 3px groove rgb(153, 154, 222);
+    border-radius: 20px;
+}
+
+.steel {
+    background-color: rgb(73, 118, 156);
+    border: 3px groove rgb(73, 118, 156);
+    border-radius: 20px;
+}
+
+.normal {
+    background-color: rgb(191, 191, 191);
+    border: 3px groove rgb(191, 191, 191);
+    border-radius: 20px;
+}
+
+.dark {
+    background-color: rgb(40, 36, 51);
+    border: 3px groove rgb(40, 36, 51);
+    border-radius: 20px;
+}
+
+.ground {
+    background-color: rgb(222, 167, 97);
+    border: 3px groove rgb(222, 167, 97);
+    border-radius: 20px;
+}
+
+.electric {
+    background-color: rgb(230, 183, 0);
+    border: 3px groove rgb(230, 183, 0);
+    border-radius: 20px;
+}
+
+.dragon {
+    background-color: rgb(137, 49, 93);
+    border: 3px groove rgb(137, 49, 93);
+    border-radius: 20px;
+}
+
+.fairy {
+    background-color: rgb(220, 160, 206);
+    border: 3px groove rgb(220, 160, 206);
+    border-radius: 20px;
+}
+
+.fire {
+    background-color: rgb(207, 20, 20);
+    border: 3px groove rgb(207, 20, 20);
+    border-radius: 20px;
+}
+
+.psychic {
+    background-color: rgb(250, 67, 184);
+    border: 3px groove rgb(250, 67, 184);
+    border-radius: 20px;
+}
+
+.fighting {
+    background-color: rgb(216, 124, 88);
+    border: 3px groove rgb(216, 124, 88);
+}
+
+.ghost {
+    background-color: rgb(193, 149, 220);
+    border: 3px groove rgb(193, 149, 220);
+}
+
+.stats-box-right{
+    background: rgb(165, 205, 83);
+    padding: 20px;
+    border-radius: 50px;
+    font-family: VT323;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 5px;
+    flex: 1 1 0%;
+}
+
+.stats-box-right-item{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
+.evolve-box{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 1px groove rgb(135, 36, 28);
+}
+
+.evolve-box-col{
+    padding-right: 7px;
+}
+
+.evolve-box-col .evolve-stage{
+    margin-top: 5px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.evolve-box-col .sprite-small {
+    display: flex;
+    image-rendering: pixelated;
+    border-radius: 50%;
+    background: rgb(202, 213, 181);
+    height: 120px;
+    width: 120px;
+    margin: 7px 0px;
+    cursor: pointer;
+}
+
+.evolve-box-col .name {
+    background: rgb(165, 205, 83);
+    border-radius: 50px;
+    font-family: VT323;
+    width: auto;
+    padding: 3px 8px;
+    margin-bottom: 7px;
+    text-align: center;
+    text-transform: capitalize;
+    min-height: 16px;
+}
+
+.abilities-box-outer{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 1px groove rgb(135, 36, 28);
+}
+
+.abilities-box-inner {
+    background: rgb(165, 205, 83);
+    padding: 20px;
+    border-radius: 50px;
+    font-family: VT323;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 5px;
+    flex: 1 1 0%;
+    height: 215px;
+}
+.abilities-row {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.abilities-box-inner .abilities-row .ability-left {
+    padding-right: 10px;
+}
+
+.abilities-box-inner .abilities-row .ability-name {
+    font-size: 24px;
+    border-bottom: 2px solid black;
+    margin-bottom: 3px;
+    text-align: center; 
+    text-transform: capitalize;
+}
+
+.abilities-box-inner .abilities-row #ability-type{
+    color: rgba(0, 0, 0, 0.9);
+    text-transform: capitalize;
+    font-size: 0.75rem;
+    width: 120px;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 20px;
+    font-family: Staatliches, cursive;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: rgb(255 255 255 / 30%) -1px 1px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.abilities-box-inner .outer{
+    overflow: hidden;
+}
+
+.abilities-box-inner .outer .ability-desc{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.abilities-box-inner .ability-desc {
+    /*width: 100%;*/
+    image-rendering: pixelated;
+    background: rgb(202, 213, 181);
+    border-radius: 50px;
+    display: block;
+    height: 100%;
+    margin: 10px 3px 5px;
+    padding: 10px 20px;
+}
+
+.abilities-box-inner .outer  .ability-text-inner{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.right-panel-controls {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 8px 0px;
+}
+
+.right-panel-controls label{
+    font-size: 20px;
+    height: 30px;
+}
+
+.right-panel-controls label .pokemon-id-input {
+    background: rgb(165, 205, 83);
+    border-radius: 50px;
+    font-family: VT323;
+    animation: 0s ease 0s infinite normal none running animation-18w80qc;
+    padding: 5px 10px;
+    width: 32px;
+    font-size: 20px;
+    text-align: right;
+    align-self: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/*MISC */
+.red {
+    color: rgb(223, 28, 24);
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(202, 213, 181); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(206, 55, 43); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+hr {
+    margin: 5px 0px;
+}
